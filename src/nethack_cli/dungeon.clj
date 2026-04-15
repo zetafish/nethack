@@ -169,3 +169,20 @@
   (->> tiles
        (map #(apply str %))
        (clojure.string/join "\n")))
+
+(defn walkable?
+  "Check if a tile at [x y] is passable (not a wall)."
+  [tiles x y]
+  (let [tile (get-tile tiles x y)]
+    (and tile (not= tile \#))))
+
+(defn random-room-pos
+  "Random position inside a room."
+  [room]
+  [(+ (:x room) (rand-int (:w room)))
+   (+ (:y room) (rand-int (:h room)))])
+
+(defn player-start
+  "Random walkable position in the first room."
+  [floor]
+  (random-room-pos (first (:rooms floor))))
