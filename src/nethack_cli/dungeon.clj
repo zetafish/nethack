@@ -1,5 +1,7 @@
 (ns nethack-cli.dungeon)
 
+(def total-floors 5)
+
 (def min-width 40)
 (def min-height 20)
 (def default-width 60)
