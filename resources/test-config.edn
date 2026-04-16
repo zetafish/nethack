@@ -1,0 +1,4 @@
+{:db/postgres {:jdbc-url #or [#env JDBC_TEST_DATABASE_URL
+                              "jdbc:postgresql://localhost:5433/banking_test?user=banking&password=banking"]}
+
+ :db/migrate {:db #ig/ref :db/postgres}}

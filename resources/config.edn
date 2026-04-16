@@ -1,0 +1,9 @@
+{:db/postgres {:jdbc-url #or [#env JDBC_DATABASE_URL
+                              "jdbc:postgresql://localhost:5432/banking?user=banking&password=banking"]}
+
+ :db/migrate {:db #ig/ref :db/postgres}
+
+ :api/handler {:db #ig/ref :db/postgres}
+
+ :api/server {:handler #ig/ref :api/handler
+              :port #or [#long #env PORT 3000]}}
