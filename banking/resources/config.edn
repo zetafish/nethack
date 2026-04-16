@@ -1,0 +1,4 @@
+{:banking/db {:jdbc-url "jdbc:postgresql://localhost:5432/banking?user=banking&password=banking"}
+ :banking/handler {:db #ig/ref :banking/db}
+ :banking/server {:handler #ig/ref :banking/handler
+                  :port 3000}}
