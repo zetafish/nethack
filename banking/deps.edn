@@ -1,0 +1,21 @@
+{:paths ["src" "resources"]
+
+ :deps
+ {org.clojure/clojure          {:mvn/version "1.12.0"}
+  metosin/compojure-api        {:mvn/version "2.0.0-alpha31"}
+  metosin/malli                {:mvn/version "0.16.4"}
+  metosin/ring-swagger-ui      {:mvn/version "5.9.0"}
+  ring/ring-core               {:mvn/version "1.12.2"}
+  ring/ring-jetty-adapter      {:mvn/version "1.12.2"}
+  integrant/integrant           {:mvn/version "0.11.0"}
+  com.github.seancorfield/next.jdbc {:mvn/version "1.3.939"}
+  org.postgresql/postgresql     {:mvn/version "42.7.4"}
+  com.zaxxer/HikariCP          {:mvn/version "6.2.1"}
+  org.clojure/data.json        {:mvn/version "2.5.1"}}
+
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}
+                      ring/ring-mock {:mvn/version "0.4.0"}}
+         :main-opts ["-m" "kaocha.runner"]}
+  :dev  {:extra-paths ["dev"]}}}
